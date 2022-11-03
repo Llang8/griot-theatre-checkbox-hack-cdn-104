@@ -76,9 +76,48 @@ header {
 
 .calendar {
     padding: 22px auto 22px 26px;
+    position: relative;
 }
 
+/* 
+Hides the dropdown content by default,
+but sets some default styling for when it IS displayed
+*/
+.dropdown-content {
+    display: none;
+    background-color: white;
+    width: 100%;
+
+    /* 
+    Takes the dropdown content out of the flow of the page
+    to prevent it from shifting the rest of the content down
+    */
+    position: absolute;
+}
+
+/* 
+Hides the checkbox, the user doesn't to see the "engine under the hood"
+*/
+.calendar-toggle {
+    display: none;
+}
+
+/* 
+Targets the hidden checkbox, when it IS checked and displays
+the dropdown content.
+*/
+.calendar-toggle:checked + .dropdown-content {
+    display: block;
+}
+
+/* .calendar:hover .dropdown-content {
+    display: block;
+    position: absolute;
+    background-color: white;
+} */
+
 .button {
+    font-family: 'Arial';
     border: 2px solid #A6A6A6;
     font-size: 24px;
     line-height: 28px;
@@ -91,6 +130,10 @@ header {
     width: 100%;
     border-radius: 3px;
     display: block;
+    font-weight: 400;
+    text-align: center;
+    background-color: #ededed;
+    cursor: pointer;
 }
     
 .cards {

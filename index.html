@@ -32,7 +32,35 @@
         <section class="content">
             <!-- Make this div into a dropdown? addbutton, etc-->
             <div class="calendar">
-                <button class="button">April 2020</button>
+                <!-- <button class="button">April 2020</button> -->
+                
+                <!-- 
+                    CHECKBOX HACK
+
+                    CSS cannot maintain click or toggle state of an element. It only
+                    allows you to toggle the display value based on hover events. In
+                    order to get around that we can use the "checkbox hack".
+
+                    The checkbox hack uses a clickable label tied to a hidden checkbox.
+                    The hidden checkbox can be switched from two states, "checked" and
+                    "unchecked". We can then use the ":checked" psuedoselector to change
+                    css values based on the checkboxes state.
+                 -->
+                
+                <!-- Our label controller, on click toggles checkbox -->
+                <label for="calendarToggle" class="button">April 2020</label>
+
+                <!-- Checkbox is hidden, but is used to store whether or not dropdown content should be displayed -->
+                <input type="checkbox" class="calendar-toggle" name="calendarToggle" id="calendarToggle">
+
+                <!-- Dropdown content, which is hidden by default, but is displayed when the checkbox is checked -->
+                <div class="dropdown-content">
+                    <!-- This is the information in the dropdown. You can put anything in here
+                        and it will display on click.
+                    -->
+                    <h2>Calendar Information</h2>
+                    <img src="https://picsum.photos/500/500" alt="">
+                </div>
             </div>
             <div class="cards-flex">
                 <div class="card">
